@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Professional Community on Discord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-weight: 500;
+            font-family: 'Inter';
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-gray-800">Impic</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
+                    <a href="#community" class="text-gray-600 hover:text-gray-900">Community</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact Us</a>
+                </div>
+                <button class="bg-yellow-400 text-black font-bold py-2 px-4 rounded hover:bg-yellow-500 transition duration-300">
+                   <a href="https://discord.gg/XardVF5p">Join Discord</a>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <section id="home" class="bg-gradient-to-r from-purple-500 to-indigo-600 text-white min-h-screen flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Join Our Professional Community on Discord</h1>
+            <p class="text-xl mb-8">Connect with programmers, gamers, music lovers, sports players, and more!</p>
+            <button class="bg-yellow-400 text-black text-lg font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transition duration-300">
+             <a href="https://discord.gg/XardVF5p">Join Now</a>
+            </button>
+        </div>
+    </section>
+
+
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">About Our Community</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Our community is a diverse group of professionals and enthusiasts who come together to share knowledge, collaborate on projects, and build lasting connections. Whether you're a seasoned expert or just starting out, you'll find a welcoming space to grow and learn.
+                    </p>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 mx-auto text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <p class="mt-2 font-semibold">Programming</p>
+                    </div>
+                    <div class="text-center">
+                        <svg class="w-16 h-16 mx-auto text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"></path></svg>
+                        <p class="mt-2 font-semibold">Gaming</p>
+                    </div>
+                    <div class="text-center">
+                        <svg class="w-16 h-16 mx-auto text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                        <p class="mt-2 font-semibold">Music</p>
+                    </div>
+                    <div class="text-center">
+                        <svg class="w-16 h-16 mx-auto text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <p class="mt-2 font-semibold">Sports</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-lg mx-auto bg-gray-100 rounded-lg p-8 shadow-lg">
+                <h2 class="text-3xl font-bold text-center mb-8">Register to Join</h2>
+                <form id="join-form">
+                    <div class="mb-6">
+                        <label for="full-name" class="block mb-2 font-semibold">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block mb-2 font-semibold">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div class="mb-6">
+                        <label for="discord-username" class="block mb-2 font-semibold">Discord Username</label>
+                        <input type="text" id="discord-username" name="discord-username" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    </div>
+                    <div class="mb-6">
+                        <span class="block mb-2 font-semibold">Interests</span>
+                        <div class="flex flex-wrap -mx-2">
+                            <div class="px-2 w-1/2">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-indigo-600" name="interests" value="programming">
+                                    <span class="ml-2">Programming</span>
+                                </label>
+                            </div>
+                            <div class="px-2 w-1/2">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-indigo-600" name="interests" value="gaming">
+                                    <span class="ml-2">Gaming</span>
+                                </label>
+                            </div>
+                            <div class="px-2 w-1/2">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-indigo-600" name="interests" value="music">
+                                    <span class="ml-2">Music</span>
+                                </label>
+                            </div>
+                            <div class="px-2 w-1/2">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-indigo-600" name="interests" value="sports">
+                                    <span class="ml-2">Sports</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="why-join" class="block mb-2 font-semibold">Why You Want to Join</label>
+                        <textarea id="why-join" name="why-join" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-md hover:bg-indigo-700 transition duration-300">
+                        Register
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="community" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Meet Our Members</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="img1.jpg" alt="John Doe" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Zaid Rakhange</h3>
+                        <p class="text-gray-700">Passionate programmer and open-source contributor</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="img1.jpg" alt="Jane Smith" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Zaid Rakhange</h3>
+                        <p class="text-gray-700">Professional gamer </p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="img1.jpg" alt="Mike Johnson" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Zaid Rakhange</h3>
+                        <p class="text-gray-700">Professional Volleyball Player</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-indigo-600 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Members Say</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white text-gray-800 rounded-lg p-8 shadow-lg">
+                    <p class="text-xl mb-4">"This community has been a game-changer for my career. The support and knowledge sharing are unparalleled!"</p>
+                    <p class="font-bold">- Sarah K., Software Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Our Professional Community</h3>
+                    <p>Connect, Learn, and Grow Together</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.67a4.822 4.822 0 00-.665 2.475c0 1.708.87 3.213 2.188 4.096a4.904 4.904 0 01-2.23-.616v.062c0 2.386 1.697 4.374 3.946 4.827a4.928 4.928 0 01-2.224.085c.63 1.953 2.445 3.377 4.604 3.416A9.864 9.864 0 010 19.54 13.94 13.94 0 007.548 21c9.142 0 14.307-7.721 13.995-14.646A9.936 9.936 0 0024 4.557z"/></svg>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.04c-5.49 0-9.96 4.47-9.96 9.96 0 4.41 3.6 8.06 8.19 8.87v-6.27h-2.47v-2.46h2.47v-1.86c0-2.45 1.49-3.81 3.67-3.81 1.05 0 1.95.08 2.22.11v2.58h-1.53c-1.2 0-1.43.57-1.43 1.39v1.81h2.86l-.37 2.46h-2.49v6.27c4.59-.81 8.19-4.46 8.19-8.87 0-5.49-4.47-9.96-9.96-9.96z"/></svg>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.947 7.178a8.003 8.003 0 01-2.303.632A4.075 4.075 0 0020.36 5.8a8.153 8.153 0 01-2.59.986 4.063 4.063 0 00-6.935 3.703 11.525 11.525 0 01-8.384-4.245 4.063 4.063 0 001.257 5.415A4.025 4.025 0 012.8 10.7v.051a4.064 4.064 0 003.256 3.975 4.04 4.04 0 01-1.073.143 4.062 4.062 0 01-.763-.074 4.063 4.063 0 003.793 2.822 8.167 8.167 0 01-5.066 1.75A8.44 8.44 0 010 18.062a11.482 11.482 0 006.224 1.83c7.469 0 11.554-6.188 11.554-11.554 0-.176-.004-.353-.012-.529A8.259 8.259 0 0021 6.19a8.086 8.086 0 01-2.053.559z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tailwind CSS Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        indigo: {
+                            500: '#6366F1',
+                            600: '#4F46E5',
+                            700: '#4338CA'
+                        },
+                        gray: {
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            300: '#D1D5DB',
+                            400: '#9CA3AF',
+                            500: '#6B7280',
+                            600: '#4B5563',
+                            700: '#374151',
+                            800: '#1F2937',
+                            900: '#111827'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
