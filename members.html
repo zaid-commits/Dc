@@ -21,8 +21,36 @@
           font-weight: 500;
           font-family: "Inter", sans-serif;
         }
+
         html {
           scroll-behavior: smooth;
+        }
+        .member-card {
+          border: 2px solid #000000;
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-card img {
+          border: 3px solid #000000;
+        }
+
+        .member-card .social-links a {
+          font-size: 1.2rem;
+          margin: 0 8px;
+          color: #000000;
+          transition: color 0.3s ease;
+        }
+
+        .member-card .social-links a:hover {
+          color: #3333ff;
         }
         .admin-card {
           position: relative;
@@ -227,15 +255,21 @@
             <!-- Add more admin cards here -->
           </div>
         </section>
-
-        <!-- Members Section -->
+        <!-- members section -->
         <section>
           <h2 class="text-3xl font-bold text-center mb-8">Our Members</h2>
+          <div class="text-center mb-8">
+            <a
+              href="registration.html"
+              class="bg-primary text-secondary font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition duration-300"
+            >
+              Add Your Card
+            </a>
+          </div>
           <div
             id="memberGrid"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
           >
-            <!-- Regular Member Card -->
             <div
               class="member-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6"
             >
@@ -278,8 +312,14 @@
                 <a href="https://github.com/Developer-Utkarsh" target="_blank"
                   ><i class="fab fa-github"></i
                 ></a>
-                <a href="https://www.linkedin.com/in/DeveloperUtkarsh" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/DevloperUtkarsh" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a
+                  href="https://www.linkedin.com/in/DeveloperUtkarsh"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://x.com/DevloperUtkarsh" target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
             </div>
 
@@ -288,14 +328,15 @@
               class="member-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6"
             >
               <img
-                src="Images/chirag_wadhwani.jpg"
+                src="https://cdn.discordapp.com/attachments/1254691418086182975/1254745863389970503/WhatsApp_Image_2024-06-24_at_16.01.29_56e77fbe.jpg?ex=667a9ca5&is=66794b25&hm=cc01055a256080d1fe9e1a0db8a0976aa614ee58d3ad5302c12c47f9ac5ac028&"
                 alt="Mayank Joshi"
                 class="w-32 h-32 rounded-full object-cover mb-4"
               />
               <h3 class="font-bold text-xl mb-2">Mayank Joshi</h3>
               <p class="text-sm text-gray-600 mb-2">Skills: HTML,CSS,Js</p>
               <p class="text-sm text-center mb-4">
-               Reason to be here: To connect with people who share the same interests and to learn openly in a public setting.
+                Reason to be here: To connect with people who share the same
+                interests and to learn openly in a public setting.
               </p>
               <div class="social-links">
                 <a href="https://github.com/MayankJoshi540" target="_blank"
@@ -305,9 +346,9 @@
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
               </div>
             </div>
-            <!-- Add more member cards here -->
           </div>
         </section>
+        <!-- Members Section -->
 
         <!-- Pagination -->
         <div class="mt-12 flex justify-center">
