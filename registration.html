@@ -7,128 +7,135 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="shortcut icon" href="impic.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Images/impic.png" type="image/x-icon">
     <style>
-      
-      /* Update this CSS to improve visibility of the generated code */
-pre {
-    max-height: 400px;
-    overflow-y: auto;
-    white-space: pre-wrap; /* Preserve line breaks and wrap long lines */
-    word-wrap: break-word; /* Wrap long words */
-    font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
-    padding: 10px; /* Add padding for better readability */
-}
-
         body {
             font-family: 'Inter', sans-serif;
         }
         html {
             scroll-behavior: smooth;
         }
-        .border-primary {
-            border-color: #3333ff;
-        }
         .text-primary {
-            color: #3333ff;
+            color: #000;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .member-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hover-scale {
+            transition: transform 0.3s ease-in-out;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
         }
     </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#000000',
-                        secondary: '#FFFFFF',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-secondary text-primary">
-    <!-- Header -->
+<body class="bg-gray-100 text-primary">
     <header class="bg-primary text-secondary shadow-md fixed w-full z-50">
-        <nav class="container mx-auto px-6 py-3">
+        <nav class="container mx-auto px-4 py-3">
             <div class="flex justify-between items-center">
                 <div class="text-xl font-bold"><a href="index.html">Impic</a></div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="hover:text-gray-300">Home</a>
-                    <a href="index.html#about" class="hover:text-gray-300">About</a>
-                    <a href="index.html#admins" class="hover:text-gray-300">Admins</a>
-                    <a href="members.html" class="hover:text-gray-300">Members</a>
+                    <a href="index.html" class="hover:text-gray-300 transition duration-300">Home</a>
+                    <a href="index.html#about" class="hover:text-gray-300 transition duration-300">About</a>
+                    <a href="index.html#admins" class="hover:text-gray-300 transition duration-300">Admins</a>
+                    <a href="members.html" class="hover:text-gray-300 transition duration-300">Members</a>
                 </div>
-                <button class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300">
+                <button class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300 hover-scale">
                     <a href="https://discord.gg/XardVF5p">Join Discord</a>
                 </button>
             </div>
         </nav>
     </header>
 
-    <!-- Member Card Generator Section -->
-    <section class="pt-24 pb-20">
-        <div class="container mx-auto px-6">
-            <h1 class="text-4xl font-bold text-center mb-8">Member Card Generator</h1>
-            <form id="memberForm" class="max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" name="name" placeholder="Name" required>
+    <main class="pt-24 pb-20 min-h-screen">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center mb-12">Member Card Generator</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white shadow-md rounded p-6">
+                    <h2 class="text-2xl font-bold mb-6">Create Your Card</h2>
+                    <form id="memberForm" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="name" type="text" name="name" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="skills">Skills</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="skills" type="text" name="skills" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="reason">Reason to be here</label>
+                            <textarea class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="reason" name="reason" rows="3" required></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Image URL</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="image" type="url" name="image" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="github">GitHub URL</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="github" type="url" name="github">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="linkedin">LinkedIn URL</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="linkedin" type="url" name="linkedin">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="twitter">Twitter URL</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="twitter" type="url" name="twitter">
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white font-bold py-2 px-4 rounded hover:bg-gray-800 transition duration-300 hover-scale">
+                            Generate Card
+                        </button>
+                    </form>
                 </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="skills">Skills</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="skills" type="text" name="skills" placeholder="Skills" required>
+                <div class="space-y-8">
+                    <div class="bg-white shadow-md rounded p-6">
+                        <h2 class="text-2xl font-bold mb-4">Card Preview</h2>
+                        <div id="output" class="member-card p-6 border rounded-lg"></div>
+                    </div>
+                    <div class="bg-white shadow-md rounded p-6">
+                        <h2 class="text-2xl font-bold mb-4">Generated Code</h2>
+                        <div class="relative">
+                            <pre><code id="htmlCode" class="bg-gray-100 p-4 rounded-lg block overflow-x-auto text-sm"></code></pre>
+                            <button id="copyButton" class="absolute top-2 right-2 bg-primary text-white font-bold py-2 px-4 rounded hover:bg-gray-800 transition duration-300 hover-scale">
+                                Copy Code
+                            </button>
+                        </div>
+                        <button id="sendToModeratorButton" class="w-full mt-4 bg-gray-500 text-white font-bold py-2 px-4 rounded hover:bg-gray-600 transition duration-300 hover-scale">
+                            Send to Moderator
+                        </button>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="reason">Reason to be here</label>
-                    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="reason" name="reason" placeholder="Reason to be here" required></textarea>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Image URL</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="image" type="url" name="image" placeholder="Image URL" required>
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="github">GitHub URL</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="github" type="url" name="github" placeholder="GitHub URL">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="linkedin">LinkedIn URL</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="linkedin" type="url" name="linkedin" placeholder="LinkedIn URL">
-                </div>
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="twitter">Twitter URL</label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="twitter" type="url" name="twitter" placeholder="Twitter URL">
-                </div>
-                <div class="flex items-center justify-between">
-                    <button class="bg-primary text-secondary font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-gray-800 transition duration-300" type="submit">
-                        Generate Card
-                    </button>
-                </div>
-            </form>
-            <div id="output" class="mt-8"></div>
-            <div id="codeOutput" class="mt-8 relative">
-                <pre><code id="htmlCode" class="bg-gray-100 p-4 rounded-lg overflow-x-auto"></code></pre>
-                <button id="copyButton" class="absolute top-2 right-2 bg-primary text-secondary font-bold py-2 px-4 rounded hover:bg-gray-800 transition duration-300">
-                    Copy Code
-                </button>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
     <footer class="bg-primary text-secondary py-8">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <h3 class="text-2xl font-bold mb-2">Impic Discord Community</h3>
                     <p>Connect, Learn, and Grow Together</p>
                 </div>
                 <div class="flex space-x-4">
-                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300 transition duration-300"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300 transition duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300 transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
                 </div>
             </div>
             <div class="mt-8 text-center text-sm">
@@ -138,68 +145,129 @@ pre {
     </footer>
 
     <script>
-        document.getElementById('memberForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const skills = formData.get('skills');
-            const reason = formData.get('reason');
-            const image = formData.get('image');
-            const github = formData.get('github');
-            const linkedin = formData.get('linkedin');
-            const twitter = formData.get('twitter');
+      document.getElementById('memberForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const skills = formData.get('skills');
+    const reason = formData.get('reason');
+    const image = formData.get('image');
+    const github = formData.get('github');
+    const linkedin = formData.get('linkedin');
+    const twitter = formData.get('twitter');
 
-            const htmlCode = `
-            <div class="member-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6">
-              <img
-                src="${image}"
-                alt="${name}"
-                class="w-32 h-32 rounded-full object-cover mb-4"
-              />
-              <h3 class="font-bold text-xl mb-2">${name}</h3>
-              <p class="text-sm text-gray-600 mb-2">Skills: ${skills}</p>
-              <p class="text-sm text-center mb-4">
-               Reason to be here: ${reason}
-              </p>
-              <div class="social-links">
-                ${github ? `<a href="${github}" target="_blank"><i class="fab fa-github"></i></a>` : ''}
-                ${linkedin ? `<a href="${linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>` : ''}
-                ${twitter ? `<a href="${twitter}" target="_blank"><i class="fab fa-twitter"></i></a>` : ''}
-              </div>
-            </div>
-            `;
+    const htmlCode = `
+    <div class="member-card flex flex-col items-center">
+      <img
+        src="${image}"
+        alt="${name}"
+        class="rounded-full object-cover mb-4"
+      />
+      <h3 class="font-bold text-xl mb-2">${name}</h3>
+      <p class="text-sm text-gray-600 mb-2">Skills: ${skills}</p>
+      <p class="text-sm text-center mb-4">
+        Reason to be here: ${reason}
+      </p>
+      <div class="social-links">
+        ${github ? `<a href="${github}" target="_blank"><i class="fab fa-github"></i></a>` : ''}
+        ${linkedin ? `<a href="${linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>` : ''}
+        ${twitter ? `<a href="${twitter}" target="_blank"><i class="fab fa-twitter"></i></a>` : ''}
+      </div>
+    </div>
+    `;
 
-            document.getElementById('output').innerHTML = htmlCode;
-            document.getElementById('htmlCode').textContent = htmlCode;
-        });
+    const outputElement = document.getElementById('output');
+    outputElement.innerHTML = htmlCode;
+    outputElement.classList.add('fade-in');
+    document.getElementById('htmlCode').textContent = htmlCode;
+});
+// Function to update the preview
+function updatePreview() {
+    const name = document.getElementById('name').value || 'Your Name';
+    const skills = document.getElementById('skills').value || 'Your Skills';
+    const reason = document.getElementById('reason').value || 'Your reason to be here';
+    const image = document.getElementById('image').value || 'https://via.placeholder.com/150';
+    const github = document.getElementById('github').value;
+    const linkedin = document.getElementById('linkedin').value;
+    const twitter = document.getElementById('twitter').value;
+
+    const htmlCode = `
+    <div class="member-card flex flex-col items-center">
+      <img
+        src="${image}"
+        alt="${name}"
+        class="w-32 h-32 rounded-full object-cover mb-4"
+      />
+      <h3 class="font-bold text-xl mb-2">${name}</h3>
+      <p class="text-sm text-gray-600 mb-2">Skills: ${skills}</p>
+      <p class="text-sm text-center mb-4">
+        Reason to be here: ${reason}
+      </p>
+      <div class="social-links">
+        ${github ? `<a href="${github}" target="_blank"><i class="fab fa-github"></i></a>` : ''}
+        ${linkedin ? `<a href="${linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>` : ''}
+        ${twitter ? `<a href="${twitter}" target="_blank"><i class="fab fa-twitter"></i></a>` : ''}
+      </div>
+    </div>
+    `;
+
+    const outputElement = document.getElementById('output');
+    outputElement.innerHTML = htmlCode;
+    document.getElementById('htmlCode').textContent = htmlCode;
+}
+
+// Add event listeners to all input fields
+const inputFields = document.querySelectorAll('#memberForm input, #memberForm textarea');
+inputFields.forEach(field => {
+    field.addEventListener('input', updatePreview);
+});
+
+// Initial preview update
+updatePreview();
+
+// Form submission handling
+document.getElementById('memberForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    updatePreview();
+    document.getElementById('output').classList.add('fade-in');
+});
+
+// Copy button functionality
+document.getElementById('copyButton').addEventListener('click', function() {
+    const codeElement = document.getElementById('htmlCode');
+    navigator.clipboard.writeText(codeElement.textContent).then(() => {
+        this.textContent = 'Copied!';
+        setTimeout(() => {
+            this.textContent = 'Copy Code';
+        }, 2000);
+    });
+});
+
+// Send to moderator functionality
+document.getElementById('sendToModeratorButton').addEventListener('click', function() {
+    const code = document.getElementById('htmlCode').textContent;
+    const emailBody = encodeURIComponent(`Hello Moderator,\n\nHere's my generated member card code:\n\n${code}\n\nPlease add this to the website.\n\nThank you!`);
+    const mailtoLink = `mailto:engineering.zaidrakhange@gmail.com?subject=New Member Card Submission&body=${emailBody}`;
+    window.location.href = mailtoLink;
+});
 
         document.getElementById('copyButton').addEventListener('click', function() {
             const codeElement = document.getElementById('htmlCode');
-            const textArea = document.createElement('textarea');
-            textArea.value = codeElement.textContent;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            this.textContent = 'Copied!';
-            setTimeout(() => {
-                this.textContent = 'Copy Code';
-            }, 2000);
+            navigator.clipboard.writeText(codeElement.textContent).then(() => {
+                this.textContent = 'Copied!';
+                setTimeout(() => {
+                    this.textContent = 'Copy Code';
+                }, 2000);
+            });
         });
-        document.getElementById('copyButton').addEventListener('click', function() {
-    const codeElement = document.getElementById('htmlCode');
-    const textArea = document.createElement('textarea');
-    textArea.value = codeElement.textContent;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    alert('Code copied!');
-});
 
+        document.getElementById('sendToModeratorButton').addEventListener('click', function() {
+            const code = document.getElementById('htmlCode').textContent;
+            const emailBody = encodeURIComponent(`Hello Moderator,\n\nHere's my generated member card code:\n\n${code}\n\nPlease add this to the website.\n\nThank you!`);
+            const mailtoLink = `mailto:engineering.zaidrakhange@gmail.com?subject=New Member Card Submission&body=${emailBody}`;
+            window.location.href = mailtoLink;
+        });
     </script>
-    
 </body>
 </html>
-
