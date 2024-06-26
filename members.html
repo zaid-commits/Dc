@@ -16,6 +16,153 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
+      @keyframes slideAnimation {
+        0% {
+          width: 0;
+        }
+        50% {
+          width: calc(100% + 15px);
+        }
+        100% {
+          width: 0;
+        }
+      }
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #ff4655;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+        animation: slideAnimation 3s infinite;
+      }
+
+      .button:hover .button_sl {
+        animation: none;
+        width: calc(100% + 15px);
+      }
+      .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: none;
+        color: #0f1923;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.15s ease;
+      }
+
+      .button::before,
+      .button::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: calc(50% - 5px);
+        border: 1px solid #7d8082;
+        transition: all 0.15s ease;
+      }
+
+      .button::before {
+        top: 0;
+        border-bottom-width: 0;
+      }
+
+      .button::after {
+        bottom: 0;
+        border-top-width: 0;
+      }
+
+      .button:active,
+      .button:focus {
+        outline: none;
+      }
+
+      .button:active::before,
+      .button:active::after {
+        right: 3px;
+        left: 3px;
+      }
+
+      .button:active::before {
+        top: 3px;
+      }
+
+      .button:active::after {
+        bottom: 3px;
+      }
+
+      .button_lg {
+        position: relative;
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #0f1923;
+        overflow: hidden;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+      }
+
+      .button_lg::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background-color: #0f1923;
+      }
+
+      .button_lg::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        height: 4px;
+        background-color: #0f1923;
+        transition: all 0.2s ease;
+      }
+
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #ff4655;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+      }
+
+      .button_text {
+        position: relative;
+      }
+
+      .button:hover {
+        color: #0f1923;
+      }
+
+      .button:hover .button_sl {
+        width: calc(100% + 15px);
+      }
+
+      .button:hover .button_lg::after {
+        background-color: #fff;
+      }
+
       body {
         font-weight: 500;
         font-family: "Inter", sans-serif;
@@ -125,7 +272,9 @@
             <a href="index.html" class="hover:text-gray-300">Home</a>
             <a href="index.html#about" class="hover:text-gray-300">About</a>
             <a href="#" class="font-semibold">Members</a>
-            <a href="index.html#contact" class="hover:text-gray-300">Contact Us</a>
+            <a href="index.html#contact" class="hover:text-gray-300"
+              >Contact Us</a
+            >
           </div>
           <button
             class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300"
@@ -155,7 +304,9 @@
 
         <!-- Admins Section -->
         <section class="mb-16">
-          <h2 class="text-3xl font-bold text-center mb-8">Our Community Heads</h2>
+          <h2 class="text-3xl font-bold text-center mb-8">
+            Our Community Heads
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Admin Card -->
             <div class="member-card admin-card flex flex-col items-center">
@@ -170,7 +321,9 @@
                 Skills: React, Tailwind, Java, Swing
               </p>
               <p class="text-sm text-center mb-4">
-                Passionate <strong>Co-Founder</strong> of this amazing community who loves to build communities and foster collaborations with like minded individuals.
+                Passionate <strong>Co-Founder</strong> of this amazing community
+                who loves to build communities and foster collaborations with
+                like minded individuals.
               </p>
               <div class="social-links">
                 <a href="#" target="_blank"><i class="fab fa-github"></i></a>
@@ -186,11 +339,10 @@
                 class="rounded-full object-cover mb-4"
               />
               <h3 class="font-bold text-xl mb-2">Divyanshu Mhatre</h3>
-              <p class="text-sm text-gray-600 mb-2">
-                Skills: WebDev,Business
-              </p>
+              <p class="text-sm text-gray-600 mb-2">Skills: WebDev,Business</p>
               <p class="text-sm text-center mb-4">
-               I am the <strong>Founder</strong> of this community who likes meeting new people and build professional communities. 
+                I am the <strong>Founder</strong> of this community who likes
+                meeting new people and build professional communities.
               </p>
               <div class="social-links">
                 <a href="#" target="_blank"><i class="fab fa-github"></i></a>
@@ -198,7 +350,7 @@
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
               </div>
             </div>
-            
+
             <div class="member-card admin-card flex flex-col items-center">
               <span class="admin-label">Moderator</span>
               <img
@@ -226,13 +378,19 @@
         <section>
           <h2 class="text-3xl font-bold text-center mb-8">Our Members</h2>
           <div class="text-center mb-8">
-            <a href="registration.html"
-              class="bg-primary text-secondary font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition duration-300"
-            >
-              Add Your Card
-            </a>
+            <button class="button text-center mb-8">
+              <span class="button_lg">
+                <span class="button_sl"></span>
+                <span class="button_text"
+                  ><a href="registration.html">Create Your Card</a></span
+                >
+              </span>
+            </button>
           </div>
-          <div id="memberGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div
+            id="memberGrid"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+          >
             <div class="member-card flex flex-col items-center">
               <img
                 src="Images/chirag_wadhwani.jpg"
@@ -240,7 +398,7 @@
                 class="rounded-full object-cover mb-4"
               />
               <h3 class="font-bold text-xl mb-2">Chirag Wadhwani</h3>
-              <p class="text-sm text-gray-600 mb-2">Skills: MERN. </p>
+              <p class="text-sm text-gray-600 mb-2">Skills: MERN.</p>
               <p class="text-sm text-center mb-4">
                 Reason for joining this server is I am growing my network for my
                 online presence and some new opportunities.
@@ -267,9 +425,17 @@
                 passionate about impactful AI projects.
               </p>
               <div class="social-links">
-                <a href="https://github.com/Developer-Utkarsh" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/DeveloperUtkarsh" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/DevloperUtkarsh" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/Developer-Utkarsh" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/DeveloperUtkarsh"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://x.com/DevloperUtkarsh" target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
             </div>
             <div class="member-card flex flex-col items-center">
@@ -285,7 +451,9 @@
                 interests and to learn openly in a public setting.
               </p>
               <div class="social-links">
-                <a href="https://github.com/MayankJoshi540" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/MayankJoshi540" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
                 <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
               </div>
@@ -297,14 +465,25 @@
                 class="w-32 h-32 rounded-full object-cover mb-4"
               />
               <h3 class="font-bold text-xl mb-2">Lakshay Bhushan</h3>
-              <p class="text-sm text-gray-600 mb-2">Skills:  React, TS, Nextjs, Hono.</p>
+              <p class="text-sm text-gray-600 mb-2">
+                Skills: React, TS, Nextjs, Hono.
+              </p>
               <p class="text-sm text-center mb-4">
-                My Reason to be here is to seek guidance & show the community what I'm working on !
+                My Reason to be here is to seek guidance & show the community
+                what I'm working on !
               </p>
               <div class="social-links">
-                <a href="https://github.com/lakshaybhushan" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/lakshaybhushan" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/blakssh" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/lakshaybhushan" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/lakshaybhushan"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://x.com/blakssh" target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
             </div>
             <div class="member-card flex flex-col items-center">
@@ -314,44 +493,76 @@
                 class="w-32 h-32 rounded-full object-cover mb-4"
               />
               <h3 class="font-bold text-xl mb-2">Dev</h3>
-              <p class="text-sm text-gray-600 mb-2">Skills: ReactJs, Bootstrap, Tailwind, GSAP</p>
+              <p class="text-sm text-gray-600 mb-2">
+                Skills: ReactJs, Bootstrap, Tailwind, GSAP
+              </p>
               <p class="text-sm text-center mb-4">
                 I'm here Just to chill out and explore this amazing community.
               </p>
               <div class="social-links">
-                <a href="https://github.com/Purohitdev" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/devansh-rajpurohit/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/DevanshRaj65478" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/Purohitdev" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/devansh-rajpurohit/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://twitter.com/DevanshRaj65478" target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
             </div>
             <div class="member-card flex flex-col items-center">
               <img
-              src="https://avatars.githubusercontent.com/u/101452242"
-              alt="Aditya Raj"
+                src="https://avatars.githubusercontent.com/u/101452242"
+                alt="Aditya Raj"
                 class="w-32 h-32 rounded-full object-cover mb-4"
               />
               <h3 class="font-bold text-xl mb-2">Aditya Raj</h3>
-              <p class="text-sm text-gray-600 mb-2">Skills: HTML/CSS/JS, ReactJs,  MongoDB, Python</p>
+              <p class="text-sm text-gray-600 mb-2">
+                Skills: HTML/CSS/JS, ReactJs, MongoDB, Python
+              </p>
               <p class="text-sm text-center mb-4">
-                The reason for me to hop on to this community is to just chill with like minded individuals.
+                The reason for me to hop on to this community is to just chill
+                with like minded individuals.
               </p>
               <div class="social-links">
-                <a href="https://github.com/aditya8raj" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/nerdinbiz" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/aditya8raj" target="_blank"
+                  ><i class="fab fa-github"></i
+                ></a>
+                <a href="https://x.com/nerdinbiz" target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
             </div>
             <!-- new card should be added here -->
           </div>
-          
         </section>
 
         <!-- Pagination -->
         <div class="mt-12 flex justify-center">
           <nav class="inline-flex rounded-md shadow">
-            <a href="#" class="px-4 py-2 rounded-l-md border border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200">Previous</a>
-            <a href="#" class="px-4 py-2 border-t border-b border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200">1</a>
-            <a href="#" class="px-4 py-2 border border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200">2</a>
-            <a href="#" class="px-4 py-2 rounded-r-md border border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200">Next</a>
+            <a
+              href="#"
+              class="px-4 py-2 rounded-l-md border border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200"
+              >Previous</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 border-t border-b border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200"
+              >1</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 border border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200"
+              >2</a
+            >
+            <a
+              href="#"
+              class="px-4 py-2 rounded-r-md border border-primary bg-secondary text-sm font-medium text-primary hover:bg-gray-200"
+              >Next</a
+            >
           </nav>
         </div>
       </div>
@@ -366,10 +577,18 @@
           </div>
           <div class="flex space-x-4">
             <!-- Social media icons -->
-            <a href="#" class="hover:text-gray-300"><i class="fab fa-discord"></i></a>
-            <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="hover:text-gray-300"><i class="fab fa-github"></i></a>
-            <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-gray-300"
+              ><i class="fab fa-discord"></i
+            ></a>
+            <a href="#" class="hover:text-gray-300"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="hover:text-gray-300"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#" class="hover:text-gray-300"
+              ><i class="fab fa-linkedin"></i
+            ></a>
           </div>
         </div>
         <div class="mt-8 text-center text-sm">

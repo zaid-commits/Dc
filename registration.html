@@ -8,9 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="shortcut icon" href="Images/impic.png" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            font-weight: 500;
         }
         html {
             scroll-behavior: smooth;
@@ -28,7 +44,7 @@
         }
         .member-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
         }
         .fade-in {
             animation: fadeIn 0.5s ease-in-out;
@@ -264,7 +280,7 @@ document.getElementById('sendToModeratorButton').addEventListener('click', funct
 
         document.getElementById('sendToModeratorButton').addEventListener('click', function() {
             const code = document.getElementById('htmlCode').textContent;
-            const emailBody = encodeURIComponent(`Hello Moderator,\n\nHere's my generated member card code:\n\n${code}\n\nPlease add this to the website.\n\nThank you!`);
+            const emailBody = encodeURIComponent(`Hello Moderator,\n\nHere's my generated member card through your great automation code:\n\n${code}\n\nPlease update my card into the website.\n\nThank you!`);
             const mailtoLink = `mailto:engineering.zaidrakhange@gmail.com?subject=New Member Card Submission&body=${emailBody}`;
             window.location.href = mailtoLink;
         });
