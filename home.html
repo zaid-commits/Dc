@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impic - Revolutionizing Digital Experiences</title>
+    <link rel="shortcut icon" href="Images/impic.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        body{
+            font-family: 'Inter';
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body class="font-inter font-medium bg-black text-white" x-data="{ mobileMenuOpen: false }">
+    <!-- Header -->
+    <header class="fixed w-full bg-black bg-opacity-90 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="flex items-center">
+                    <img src="Images/impic.png" alt="Impic Logo" class="h-10 w-auto mr-2">
+                    <span class="text-2xl font-bold">Impic</span>
+                </a>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="#home" class="hover:text-gray-300 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-gray-300 transition">Services</a></li>
+                        <li><a href="#about" class="hover:text-gray-300 transition">About</a></li>
+                        <li><a href="#testimonials" class="hover:text-gray-300 transition">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-gray-300 transition">Contact</a></li>
+                    </ul>
+                </nav>
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-gray-900" x-transition>
+            <ul class="py-4 px-4 space-y-2">
+                <li><a @click="mobileMenuOpen = false" href="#home" class="block py-2 hover:text-gray-300 transition">Home</a></li>
+                <li><a @click="mobileMenuOpen = false" href="#services" class="block py-2 hover:text-gray-300 transition">Services</a></li>
+                <li><a @click="mobileMenuOpen = false" href="#about" class="block py-2 hover:text-gray-300 transition">About</a></li>
+                <li><a @click="mobileMenuOpen = false" href="#testimonials" class="block py-2 hover:text-gray-300 transition">Testimonials</a></li>
+                <li><a @click="mobileMenuOpen = false" href="#contact" class="block py-2 hover:text-gray-300 transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
+            <div class="text-center px-4">
+                <img src="Images/impic.png" alt="Impic Logo" class="mx-auto h-24 w-auto mb-6">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Welcome to Impic</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Revolutionizing digital experiences with cutting-edge AI tools and a vibrant tech community.</p>
+                <a href="#services" class="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-200 transition">Explore Our Services</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center">Our Services</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-white transition">
+                        <svg class="w-12 h-12 text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <h3 class="text-2xl font-bold mb-4">AI Tool Directory</h3>
+                        <p class="mb-4">Access our comprehensive directory of cutting-edge AI tools to enhance your projects and workflows.</p>
+                        <a href="#" class="text-white hover:underline">Learn More →</a>
+                    </div>
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-white transition">
+                        <svg class="w-12 h-12 text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <h3 class="text-2xl font-bold mb-4">Online Community</h3>
+                        <p class="mb-4">Join our vibrant online community of tech enthusiasts, innovators, and experts.</p>
+                        <a href="#" class="text-white hover:underline">Join Now →</a>
+                    </div>
+                    <div class="bg-black p-8 rounded-lg border border-gray-800 hover:border-white transition">
+                        <svg class="w-12 h-12 text-white mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <h3 class="text-2xl font-bold mb-4">Email Newsletter</h3>
+                        <p class="mb-4">Stay updated with our weekly newsletter featuring the latest in tech and AI innovations.</p>
+                        <a href="#" class="text-white hover:underline">Subscribe →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- After the Services section -->
+
+<!-- Animated Statistics Section -->
+<section class="py-20 bg-black">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center">Our Impact</h2>
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+                <h3 class="text-4xl font-bold mb-2"><span x-data="{ count: 0 }" x-init="setInterval(() => { count = count === 5000 ? 5000 : count + 50 }, 20)"><span x-text="count">0</span>+</span></h3>
+                <p class="text-xl">AI Tools Listed</p>
+            </div>
+            <div>
+                <h3 class="text-4xl font-bold mb-2"><span x-data="{ count: 0 }" x-init="setInterval(() => { count = count === 100000 ? 100000 : count + 1000 }, 20)"><span x-text="count">0</span>+</span></h3>
+                <p class="text-xl">Community Members</p>
+            </div>
+            <div>
+                <h3 class="text-4xl font-bold mb-2"><span x-data="{ count: 0 }" x-init="setInterval(() => { count = count === 500 ? 500 : count + 5 }, 20)"><span x-text="count">0</span>+</span></h3>
+                <p class="text-xl">Partner Companies</p>
+            </div>
+            <div>
+                <h3 class="text-4xl font-bold mb-2"><span x-data="{ count: 0 }" x-init="setInterval(() => { count = count === 50 ? 50 : count + 1 }, 40)"><span x-text="count">0</span></span></h3>
+                <p class="text-xl">Countries Reached</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Before the Contact section -->
+
+<!-- Social Media Feed Section -->
+<section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center">Connect With Us</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-black p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">Latest Tweet</h3>
+                <div id="twitter-feed" class="h-64 overflow-y-auto">
+                    <!-- Twitter feed will be populated here -->
+                    <p class="mb-4">Loading latest tweets...</p>
+                </div>
+            </div>
+            <div class="bg-black p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">Instagram</h3>
+                <div id="instagram-feed" class="h-64 overflow-y-auto">
+                    <!-- Instagram feed will be populated here -->
+                    <p class="mb-4">Loading Instagram posts...</p>
+                </div>
+            </div>
+            <div class="bg-black p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4">LinkedIn Updates</h3>
+                <div id="linkedin-feed" class="h-64 overflow-y-auto">
+                    <!-- LinkedIn feed will be populated here -->
+                    <p class="mb-4">Loading LinkedIn updates...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    // Existing smooth scrolling and mobile menu code...
+
+    // Function to fetch and display social media feeds
+    function fetchSocialMediaFeeds() {
+        // This is a placeholder. You'll need to implement actual API calls to fetch the feeds.
+        document.getElementById('twitter-feed').innerHTML = '<p>Latest tweet content here...</p>';
+        document.getElementById('instagram-feed').innerHTML = '<p>Latest Instagram post content here...</p>';
+        document.getElementById('linkedin-feed').innerHTML = '<p>Latest LinkedIn update content here...</p>';
+    }
+
+    // Call the function when the page loads
+    window.addEventListener('load', fetchSocialMediaFeeds);
+</script>
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-black">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="Images/impic.png" alt="About Impic" class="rounded-lg shadow-lg">
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h2 class="text-4xl font-bold mb-6">About Impic</h2>
+                        <p class="mb-6">At Impic, we're passionate about bridging the gap between cutting-edge AI technology and practical applications. Our mission is to empower individuals and businesses with the tools and knowledge they need to thrive in the digital age.</p>
+                        <p class="mb-6">Founded in 2024, we've quickly grown into a hub for AI enthusiasts, developers, and industry professionals. Our team of experts curates the best AI tools and fosters a community where ideas flourish and innovations take shape.</p>
+                        <a href="#" class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Learn Our Story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center">What Our Users Say</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-black p-8 rounded-lg border border-gray-800">
+                        <p class="mb-4 italic">"Impic has been a game-changer for my startup. The AI tools we discovered through their directory have streamlined our operations and boosted our productivity."</p>
+                        <p class="font-bold">- Sarah J., Tech Entrepreneur</p>
+                    </div>
+                    <div class="bg-black p-8 rounded-lg border border-gray-800">
+                        <p class="mb-4 italic">"The Impic community is incredibly supportive and knowledgeable. I've learned so much and made valuable connections that have advanced my career in AI."</p>
+                        <p class="font-bold">- Michael L., Data Scientist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-white text-black">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-4xl font-bold mb-6">Ready to Revolutionize Your Digital Experience?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Join our community today and unlock a world of AI-powered possibilities. Whether you're a developer, entrepreneur, or tech enthusiast, there's a place for you at Impic.</p>
+                <a href="#" class="bg-black text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-800 transition">Join Impic Now</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-black">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-12 text-center">Get in Touch</h2>
+                <div class="max-w-2xl mx-auto">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-white" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-white" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-white" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="logo 2.png" alt="Impic Logo" class="h-10 w-auto mb-4">
+                    <p>Revolutionizing digital experiences with AI-powered solutions.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-gray-300 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-gray-300 transition">Services</a></li>
+                        <li><a href="#about" class="hover:text-gray-300 transition">About</a></li>
+                        <li><a href="#contact" class="hover:text-gray-300 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300 transition">Forum</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">Events</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-gray-300 transition">Twitter</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">Facebook</a></li>
+                        <li><a href="#" class="hover:text-gray-300 transition">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+                <p>&copy; 2024 Impic. All rights reserved.</p>
+                <div class="mt-4 space-x-4">
+                    <a href="#" class="hover:text-gray-300 transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300 transition">Terms of Service</a>
+                    <a href="#" class="hover:text-gray-300 transition">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        window.addEventListener('click', function(e) {
+            if (!document.querySelector('header').contains(e.target)) {
+                Alpine.store('mobileMenuOpen', false);
+            }
+        });
+    </script>
+</body>
+</html>
