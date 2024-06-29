@@ -265,25 +265,44 @@
   </head>
   <body class="font-sans bg-secondary text-primary">
     <header class="bg-primary text-secondary shadow-md fixed w-full z-50">
-      <nav class="container mx-auto px-6 py-3">
-        <div class="flex justify-between items-center">
-          <div class="text-xl font-bold"><a href="index.html">Impic</a></div>
-          <div class="hidden md:flex space-x-6">
-            <a href="index.html" class="hover:text-gray-300">Home</a>
-            <a href="index.html#about" class="hover:text-gray-300">About</a>
-            <a href="#" class="font-semibold">Members</a>
-            <a href="index.html#contact" class="hover:text-gray-300"
-              >Contact Us</a
-            >
+      <nav class="container mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+              <div class="text-xl font-bold"><a href="index.html">Impic</a></div>
+              <div class="hidden md:flex space-x-6">
+                  <a href="index.html" class="hover:text-gray-300 transition duration-300">Home</a>
+                  <a href="index.html#about" class="hover:text-gray-300 transition duration-300">About</a>
+                  <a href="index.html#admins" class="hover:text-gray-300 transition duration-300">Admins</a>
+                  <a href="members.html" class="hover:text-gray-300 transition duration-300">Members</a>
+                  <a href="projects.html" class="hover:text-gray-300 transition duration-300">Projects</a>
+              </div>
+              <button class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300 hover-scale hidden md:block">
+                  <a href="https://discord.gg/XardVF5p">Join Discord</a>
+              </button>
+              <!-- Mobile menu button -->
+              <button id="mobile-menu-button" class="md:hidden text-secondary focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  </svg>
+              </button>
           </div>
-          <button
-            class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300"
-          >
-            <a href="https://discord.gg/XardVF5p">Join Discord</a>
-          </button>
-        </div>
       </nav>
-    </header>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden bg-primary text-secondary fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
+          <div class="flex flex-col h-full justify-center items-center space-y-8 relative">
+              <a href="index.html" class="text-2xl hover:text-gray-300 transition duration-300">Home</a>
+              <a href="index.html#about" class="text-2xl hover:text-gray-300 transition duration-300">About</a>
+              <a href="index.html#admins" class="text-2xl hover:text-gray-300 transition duration-300">Admins</a>
+              <a href="members.html" class="text-2xl hover:text-gray-300 transition duration-300">Members</a>
+              <a href="projects.html" class="text-2xl hover:text-gray-300 transition duration-300">Projects</a>
+              <a href="https://discord.gg/XardVF5p" class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300">Join Discord</a>
+              <button id="close-mobile-menu" class="absolute top-4 right-4 text-secondary focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+              </button>
+          </div>
+      </div>
+  </header>
 
     <!-- Main Content -->
     <main class="pt-24 pb-12">
@@ -570,33 +589,43 @@
 
     <footer class="bg-primary text-secondary py-8">
       <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <h3 class="text-2xl font-bold mb-2">Impic Discord Community</h3>
-            <p>Connect, Learn, and Grow Together</p>
+          <div class="flex flex-col md:flex-row justify-between items-center">
+              <div class="mb-6 md:mb-0">
+                  <h3 class="text-2xl font-bold mb-2">Impic Discord Community</h3>
+                  <p>Connect, Learn, and Grow Together</p>
+              </div>
+              <div class="flex space-x-4">
+                  <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                  <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+              </div>
           </div>
-          <div class="flex space-x-4">
-            <!-- Social media icons -->
-            <a href="#" class="hover:text-gray-300"
-              ><i class="fab fa-discord"></i
-            ></a>
-            <a href="#" class="hover:text-gray-300"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="#" class="hover:text-gray-300"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a href="#" class="hover:text-gray-300"
-              ><i class="fab fa-linkedin"></i
-            ></a>
+          <div class="mt-8 text-center text-sm">
+              <p>&copy; 2024 Impic Discord Community. All rights reserved.</p>
           </div>
-        </div>
-        <div class="mt-8 text-center text-sm">
-          <p>&copy; 2024 Impic Discord Community. All rights reserved.</p>
-        </div>
       </div>
-    </footer>
+  </footer>
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
 
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+    });
+
+    closeMobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    });
+</script>
     <script>
       // Search functionality
       const searchInput = document.getElementById("search");

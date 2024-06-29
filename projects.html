@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impic Discord Community - Project Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="shortcut icon" href="Images/impic.png" type="image/x-icon">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+        .tech-tag {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        /* button styles */
+          @keyframes slideAnimation {
+        0% {
+          width: 0;
+        }
+        50% {
+          width: calc(100% + 15px);
+        }
+        100% {
+          width: 0;
+        }
+      }
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #000;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+        animation: slideAnimation 3s infinite;
+      }
+
+      .button:hover .button_sl {
+        animation: none;
+        width: calc(100% + 15px);
+      }
+      .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: none;
+        color: #0f1923;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.15s ease;
+      }
+
+      .button::before,
+      .button::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: calc(50% - 5px);
+        border: 1px solid #7d8082;
+        transition: all 0.15s ease;
+      }
+
+      .button::before {
+        top: 0;
+        border-bottom-width: 0;
+      }
+
+      .button::after {
+        bottom: 0;
+        border-top-width: 0;
+      }
+
+      .button:active,
+      .button:focus {
+        outline: none;
+      }
+
+      .button:active::before,
+      .button:active::after {
+        right: 3px;
+        left: 3px;
+      }
+
+      .button:active::before {
+        top: 3px;
+      }
+
+      .button:active::after {
+        bottom: 3px;
+      }
+
+      .button_lg {
+        position: relative;
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #0f1923;
+        overflow: hidden;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+      }
+
+      .button_lg::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background-color: #0f1923;
+      }
+
+      .button_lg::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        height: 4px;
+        background-color: #0f1923;
+        transition: all 0.2s ease;
+      }
+
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #7d8082;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+      }
+
+      .button_text {
+        position: relative;
+      }
+
+      .button:hover {
+        color: #0f1923;
+      }
+
+      .button:hover .button_sl {
+        width: calc(100% + 15px);
+      }
+
+      .button:hover .button_lg::after {
+        background-color: #fff;
+      }
+
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-primary text-secondary shadow-md fixed w-full z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold"><a href="index.html">Impic</a></div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-gray-300 transition duration-300">Home</a>
+                    <a href="index.html#about" class="hover:text-gray-300 transition duration-300">About</a>
+                    <a href="index.html#admins" class="hover:text-gray-300 transition duration-300">Admins</a>
+                    <a href="members.html" class="hover:text-gray-300 transition duration-300">Members</a>
+                    <a href="projects.html" class="hover:text-gray-300 transition duration-300">Projects</a>
+                </div>
+                <button class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300 hover-scale hidden md:block">
+                    <a href="https://discord.gg/XardVF5p">Join Discord</a>
+                </button>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-secondary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden bg-primary text-secondary fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
+            <div class="flex flex-col h-full justify-center items-center space-y-8 relative">
+                <a href="index.html" class="text-2xl hover:text-gray-300 transition duration-300">Home</a>
+                <a href="index.html#about" class="text-2xl hover:text-gray-300 transition duration-300">About</a>
+                <a href="index.html#admins" class="text-2xl hover:text-gray-300 transition duration-300">Admins</a>
+                <a href="members.html" class="text-2xl hover:text-gray-300 transition duration-300">Members</a>
+                <a href="projects.html" class="text-2xl hover:text-gray-300 transition duration-300">Projects</a>
+                <a href="https://discord.gg/XardVF5p" class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300">Join Discord</a>
+                <button id="close-mobile-menu" class="absolute top-4 right-4 text-secondary focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+
+    <section class="py-20 ">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center mb-16">Our Impressive Projects</h2>
+            <div class="text-center mb-8">
+                <button class="button text-center mb-8">
+                  <span class="button_lg">
+                    <span class="button_sl"></span>
+                    <span class="button_text"
+                      ><a href="project-registration.html">Upload your Project</a></span
+                    >
+                  </span>
+                </button>
+              </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Project Card 1 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <img src="https://socialify.git.ci/zaid-commits/CV-Generator/image?description=1&descriptionEditable=This%20tool%20helps%20you%20scrap%20the%20data%20of%20the%20user%20through%20his%20github%20URL%20into%20a%20downloadable%20CV%20format.&forks=1&issues=1&language=1&name=1&owner=1&pattern=Solid&pulls=1&stargazers=1&theme=Dark" alt="Github CV Generator" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="font-bold text-2xl mb-4">Github CV Generator</h3>
+                        <p class="text-gray-600 text-lg mb-6">This project is a web app created by zaid rakhange to generate a CV of the user through his github account where we can find his all recent activities also</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">Html</span><span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">CSS</span><span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">Javascript</span><span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">GithubAPI</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary font-bold text-lg hover:underline">Learn More</a>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/zaid-commits/CV-Generator" target="_blank" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                                <a href="https://cvimpic.vercel.app" target="_blank" class="text-gray-400 hover:text-primary transition-colors"><i class="fas fa-external-link-alt text-2xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card rounded-xl overflow-hidden">
+                    <img src="https://via.placeholder.com/600x300" alt="Project 2" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="font-bold text-2xl mb-4">EcoSmart City Planner</h3>
+                        <p class="text-gray-600 text-lg mb-6">An AI-powered urban planning tool that designs sustainable and eco-friendly cities. It optimizes resource allocation, traffic flow, and green spaces to create the cities of tomorrow.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="tech-tag">Artificial Intelligence</span>
+                            <span class="tech-tag">Urban Planning</span>
+                            <span class="tech-tag">Sustainability</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-primary font-bold text-lg hover:underline">Learn More</a>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github text-2xl"></i></a>
+                                <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fas fa-external-link-alt text-2xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more project cards as needed -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-secondary py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Impic Discord Community</h3>
+                    <p>Connect, Learn, and Grow Together</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm">
+                <p>&copy; 2024 Impic Discord Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+    
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Member Card Generator - Impic Discord Community</title>
+    <title>Project Registration - Impic Discord Community</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -39,10 +39,10 @@
             word-wrap: break-word;
             font-family: 'Courier New', Courier, monospace;
         }
-        .member-card {
+        .project-card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-        .member-card:hover {
+        .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
         }
@@ -101,51 +101,67 @@
             </div>
         </div>
     </header>
-
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+    
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+    
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
     <main class="pt-24 pb-20 min-h-screen">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center mb-12">Member Card Generator</h1>
+            <h1 class="text-4xl font-bold text-center mb-12">Project Registration</h1>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="bg-white shadow-md rounded p-6">
-                    <h2 class="text-2xl font-bold mb-6">Create Your Card</h2>
-                    <form id="memberForm" class="space-y-4">
+                    <h2 class="text-2xl font-bold mb-6">Register Your Project</h2>
+                    <form id="projectForm" class="space-y-4">
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Name</label>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name">Project Name</label>
                             <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="name" type="text" name="name" required>
                         </div>
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="skills">Skills</label>
-                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="skills" type="text" name="skills" required>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="description">Description</label>
+                            <textarea class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="description" name="description" rows="3" required></textarea>
                         </div>
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="reason">Reason to be here</label>
-                            <textarea class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="reason" name="reason" rows="3" required></textarea>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="technologies">Technologies Used</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="technologies" type="text" name="technologies" required>
                         </div>
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Image URL</label>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Project Image URL</label>
                             <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="image" type="url" name="image" required>
                         </div>
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="github">GitHub URL</label>
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="github">GitHub Repository URL</label>
                             <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="github" type="url" name="github">
                         </div>
                         <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="linkedin">LinkedIn URL</label>
-                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="linkedin" type="url" name="linkedin">
-                        </div>
-                        <div>
-                            <label class="block text-gray-700 text-sm font-bold mb-2" for="twitter">Twitter URL</label>
-                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="twitter" type="url" name="twitter">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="liveDemo">Live Demo URL</label>
+                            <input class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary" id="liveDemo" type="url" name="liveDemo">
                         </div>
                         <button type="submit" class="w-full bg-primary text-white font-bold py-2 px-4 rounded hover:bg-gray-800 transition duration-300 hover-scale">
-                            Generate Card
+                            Generate Project Card
                         </button>
                     </form>
                 </div>
                 <div class="space-y-8">
                     <div class="bg-white shadow-md rounded p-6">
-                        <h2 class="text-2xl font-bold mb-4">Card Preview</h2>
-                        <div id="output" class="member-card p-6 border rounded-lg"></div>
+                        <h2 class="text-2xl font-bold mb-4">Project Card Preview</h2>
+                        <div id="output" class="project-card p-6 border rounded-lg"></div>
                     </div>
                     <div class="bg-white shadow-md rounded p-6">
                         <h2 class="text-2xl font-bold mb-4">Generated Code</h2>
@@ -184,113 +200,56 @@
     </footer>
 
     <script>
-      document.getElementById('memberForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const skills = formData.get('skills');
-    const reason = formData.get('reason');
-    const image = formData.get('image');
-    const github = formData.get('github');
-    const linkedin = formData.get('linkedin');
-    const twitter = formData.get('twitter');
+        function updatePreview() {
+            const name = document.getElementById('name').value || 'Project Name';
+            const description = document.getElementById('description').value || 'Project description goes here.';
+            const technologies = document.getElementById('technologies').value || 'Technologies used';
+            const image = document.getElementById('image').value || 'https://via.placeholder.com/600x300';
+            const github = document.getElementById('github').value;
+            const liveDemo = document.getElementById('liveDemo').value;
 
-    const htmlCode = `
-    <div class="member-card flex flex-col items-center">
-      <img
-        src="${image}"
-        alt="${name}"
-        class="rounded-full object-cover mb-4"
-      />
-      <h3 class="font-bold text-xl mb-2">${name}</h3>
-      <p class="text-sm text-gray-600 mb-2">Skills: ${skills}</p>
-      <p class="text-sm text-center mb-4">
-        Reason to be here: ${reason}
-      </p>
-      <div class="social-links">
-        ${github ? `<a href="${github}" target="_blank"><i class="fab fa-github"></i></a>` : ''}
-        ${linkedin ? `<a href="${linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>` : ''}
-        ${twitter ? `<a href="${twitter}" target="_blank"><i class="fab fa-twitter"></i></a>` : ''}
-      </div>
-    </div>
-    `;
+            const htmlCode = `
+            <div class="project-card rounded-xl overflow-hidden">
+                <img src="${image}" alt="${name}" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="font-bold text-2xl mb-4">${name}</h3>
+                    <p class="text-gray-600 text-lg mb-6">${description}</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        ${technologies.split(',').map(tech => `<span class="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">${tech.trim()}</span>`).join('')}
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-primary font-bold text-lg hover:underline">Learn More</a>
+                        <div class="flex space-x-4">
+                            ${github ? `<a href="${github}" target="_blank" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github text-2xl"></i></a>` : ''}
+                            ${liveDemo ? `<a href="${liveDemo}" target="_blank" class="text-gray-400 hover:text-primary transition-colors"><i class="fas fa-external-link-alt text-2xl"></i></a>` : ''}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
 
-    const outputElement = document.getElementById('output');
-    outputElement.innerHTML = htmlCode;
-    outputElement.classList.add('fade-in');
-    document.getElementById('htmlCode').textContent = htmlCode;
-});
-// Function to update the preview
-function updatePreview() {
-    const name = document.getElementById('name').value || 'Your Name';
-    const skills = document.getElementById('skills').value || 'Your Skills';
-    const reason = document.getElementById('reason').value || 'Your reason to be here';
-    const image = document.getElementById('image').value || 'https://via.placeholder.com/150';
-    const github = document.getElementById('github').value;
-    const linkedin = document.getElementById('linkedin').value;
-    const twitter = document.getElementById('twitter').value;
+            const outputElement = document.getElementById('output');
+            outputElement.innerHTML = htmlCode;
+            document.getElementById('htmlCode').textContent = htmlCode;
+        }
 
-    const htmlCode = `
-    <div class="member-card flex flex-col items-center">
-      <img
-        src="${image}"
-        alt="${name}"
-        class="w-32 h-32 rounded-full object-cover mb-4"
-      />
-      <h3 class="font-bold text-xl mb-2">${name}</h3>
-      <p class="text-sm text-gray-600 mb-2">Skills: ${skills}</p>
-      <p class="text-sm text-center mb-4">
-        Reason to be here: ${reason}
-      </p>
-      <div class="social-links">
-        ${github ? `<a href="${github}" target="_blank"><i class="fab fa-github"></i></a>` : ''}
-        ${linkedin ? `<a href="${linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>` : ''}
-        ${twitter ? `<a href="${twitter}" target="_blank"><i class="fab fa-twitter"></i></a>` : ''}
-      </div>
-    </div>
-    `;
+        // Add event listeners to all input fields
+        const inputFields = document.querySelectorAll('#projectForm input, #projectForm textarea');
+        inputFields.forEach(field => {
+            field.addEventListener('input', updatePreview);
+        });
 
-    const outputElement = document.getElementById('output');
-    outputElement.innerHTML = htmlCode;
-    document.getElementById('htmlCode').textContent = htmlCode;
-}
+        // Initial preview update
+        updatePreview();
 
-// Add event listeners to all input fields
-const inputFields = document.querySelectorAll('#memberForm input, #memberForm textarea');
-inputFields.forEach(field => {
-    field.addEventListener('input', updatePreview);
-});
+        // Form submission handling
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            updatePreview();
+            document.getElementById('output').classList.add('fade-in');
+        });
 
-// Initial preview update
-updatePreview();
-
-// Form submission handling
-document.getElementById('memberForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    updatePreview();
-    document.getElementById('output').classList.add('fade-in');
-});
-
-// Copy button functionality
-document.getElementById('copyButton').addEventListener('click', function() {
-    const codeElement = document.getElementById('htmlCode');
-    navigator.clipboard.writeText(codeElement.textContent).then(() => {
-        this.textContent = 'Copied!';
-        setTimeout(() => {
-            this.textContent = 'Copy Code';
-        }, 2000);
-    });
-});
-
-// Send to moderator functionality
-document.getElementById('sendToModeratorButton').addEventListener('click', function() {
-    const code = document.getElementById('htmlCode').textContent;
-    const emailBody = encodeURIComponent(`Hello Moderator,\n\nHere's my generated member card code:\n\n${code}\n\nPlease add this to the website.\n\nThank you!`);
-    const mailtoLink = `mailto:engineering.zaidrakhange@gmail.com?subject=New Member Card Submission&body=${emailBody}`;
-    window.location.href = mailtoLink;
-});
-
+        // Copy button functionality
         document.getElementById('copyButton').addEventListener('click', function() {
             const codeElement = document.getElementById('htmlCode');
             navigator.clipboard.writeText(codeElement.textContent).then(() => {
@@ -301,33 +260,14 @@ document.getElementById('sendToModeratorButton').addEventListener('click', funct
             });
         });
 
+        // Send to moderator functionality
         document.getElementById('sendToModeratorButton').addEventListener('click', function() {
             const code = document.getElementById('htmlCode').textContent;
-            const emailBody = encodeURIComponent(`Hello Moderator,\n\nHere's my generated member card through your great automation code:\n\n${code}\n\nPlease update my card into the website.\n\nThank you!`);
-            const mailtoLink = `mailto:engineering.zaidrakhange@gmail.com?subject=New Member Card Submission&body=${emailBody}`;
+            const emailBody = encodeURIComponent(`Hello Moderator,\n\nHere's my generated project card code:\n\n${code}\n\nPlease add this project to the website.\n\nThank you!`);
+            const mailtoLink = `mailto:engineering.zaidrakhange@gmail.com?subject=New Project Submission&body=${emailBody}`;
             window.location.href = mailtoLink;
         });
     </script>
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
     
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-        });
-    
-        closeMobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
-        });
-    
-        // Close mobile menu when clicking on a link
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-            });
-        });
-    </script>
 </body>
 </html>
