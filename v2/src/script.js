@@ -16,3 +16,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
     localStorage.setItem("theme", newTheme);
   });
 });
+
+// Search functionality
+const searchInput = document.getElementById("search");
+const memberCards = document.querySelectorAll(".member-card");
+
+searchInput.addEventListener("input", function () {
+  const searchTerm = this.value.toLowerCase();
+  memberCards.forEach((card) => {
+    const content = card.textContent.toLowerCase();
+    if (content.includes(searchTerm)) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
