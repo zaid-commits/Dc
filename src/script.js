@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 // Search functionality
 const searchInput = document.getElementById("search");
-const memberCards = document.querySelectorAll(".member-card");
+const memberCards = document.querySelectorAll(".head-card");
 
 searchInput.addEventListener("input", function () {
   const searchTerm = this.value.toLowerCase();

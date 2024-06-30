@@ -18,7 +18,7 @@ html {
 /* stylings for theme toggle button */
 
 :root {
-  --bg-color-light: #ffffff; /* Updated light theme color */
+  --bg-color-light: #e0dede; /* Updated light theme color */
   --bg-color-dark: #000000; /* Updated dark theme color */
   --text-color-light: #000000; /* Ensure text is visible in light mode */
   --text-color-dark: #ffffff; /* Ensure text is visible in dark mode */
@@ -251,4 +251,61 @@ body.dark-theme {
 }
 .social-links a:hover {
   color: #3333ff;
+}
+
+/* registration page */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: "Courier New", Courier, monospace;
+}
+.member-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* project registration */
+.project-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hover-scale {
+  transition: transform 0.3s ease-in-out;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
 }
