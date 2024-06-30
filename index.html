@@ -1,230 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- google fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- font-awesome -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impic Discord Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Impic: Connect, Share, Inspire</title>
-    <link href="./src/output.css" rel="stylesheet" />
-  </head>
-  <body>
-    <!-- navbar starts -->
-    <nav class="sticky top-0 z-50">
-      <div class="navbar text-white bg-black">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow bg-black"
-            >
-            <li><a href="#about">About</a></li>
-            <li><a href="#admins">Admins</a></li>
-            <li><a href="members.html">Members</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            </ul>
+
+    
+    <link rel="shortcut icon" href="Images/impic.png" type="image/x-icon">
+    <style>
+        /* button styles */
+        @keyframes slideAnimation {
+        0% {
+          width: 0;
+        }
+        50% {
+          width: calc(100% + 15px);
+        }
+        100% {
+          width: 0;
+        }
+      }
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #ff4655;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+        animation: slideAnimation 3s infinite;
+      }
+
+      .button:hover .button_sl {
+        animation: none;
+        width: calc(100% + 15px);
+      }
+      .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: none;
+        color: #0f1923;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.15s ease;
+      }
+
+      .button::before,
+      .button::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: calc(50% - 5px);
+        border: 1px solid #7d8082;
+        transition: all 0.15s ease;
+      }
+
+      .button::before {
+        top: 0;
+        border-bottom-width: 0;
+      }
+
+      .button::after {
+        bottom: 0;
+        border-top-width: 0;
+      }
+
+      .button:active,
+      .button:focus {
+        outline: none;
+      }
+
+      .button:active::before,
+      .button:active::after {
+        right: 3px;
+        left: 3px;
+      }
+
+      .button:active::before {
+        top: 3px;
+      }
+
+      .button:active::after {
+        bottom: 3px;
+      }
+
+      .button_lg {
+        position: relative;
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #0f1923;
+        overflow: hidden;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+      }
+
+      .button_lg::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background-color: #0f1923;
+      }
+
+      .button_lg::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        height: 4px;
+        background-color: #0f1923;
+        transition: all 0.2s ease;
+      }
+
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #7d8082;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+      }
+
+      .button_text {
+        position: relative;
+      }
+
+      .button:hover {
+        color: #0f1923;
+      }
+
+      .button:hover .button_sl {
+        width: calc(100% + 15px);
+      }
+
+      .button:hover .button_lg::after {
+        background-color: #fff;
+      }
+
+        /* button ends here */
+         .admin-card {
+          border: 2px solid #000000;
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+
+        .admin-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .admin-card img {
+          border: 3px solid #000000;
+        }
+       .border-primary {
+    border-color: #3333ff; /* Change to your primary color */
+}
+
+.text-primary {
+    color: #3333ff; /* Change to your primary color */
+} 
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .admin-card:hover .absolute {
+    opacity: 0.1;
+}
+        /* .admin-card {
+            transition: all 0.3s ease;
+        }
+        .admin-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .admin-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .admin-card:hover::before {
+            opacity: 1;
+        } */
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-secondary text-primary">
+    <!-- Header -->
+    <header class="bg-primary text-secondary shadow-md fixed w-full z-50">
+      <nav class="container mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+              <div class="text-xl font-bold"><a href="index.html">Impic</a></div>
+              <div class="hidden md:flex space-x-6">
+                  <a href="index.html" class="hover:text-gray-300 transition duration-300">Home</a>
+                  <a href="index.html#about" class="hover:text-gray-300 transition duration-300">About</a>
+                  <a href="index.html#admins" class="hover:text-gray-300 transition duration-300">Admins</a>
+                  <a href="members.html" class="hover:text-gray-300 transition duration-300">Members</a>
+                  <a href="projects.html" class="hover:text-gray-300 transition duration-300">Projects</a>
+              </div>
+              <button class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300 hover-scale hidden md:block">
+                  <a href="https://discord.gg/XardVF5p">Join Discord</a>
+              </button>
+              <!-- Mobile menu button -->
+              <button id="mobile-menu-button" class="md:hidden text-secondary focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  </svg>
+              </button>
           </div>
-          <a class="text-xl pl-4 font-bold" href="#">Impic</a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1">
-            <li><a href="#about">About</a></li>
-            <li><a href="#admins">Admins</a></li>
-            <li><a href="members.html">Members</a></li>
-            <li><a href="projects.html">Projects</a></li>
-          </ul>
-        </div>
-        <div class="navbar-end">
-          <a
-            class="btn bg-black text-white hover:bg-white hover:text-black transition duration-500 ease-in-out mr-3" href="https://discord.gg/rxmBKWnQ"
-            >Join Discord</a
-          >
-        </div>
-        <button id="theme-toggle" class="btn btn-ghost text-lg">🌙</button>
+      </nav>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden bg-primary text-secondary fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
+          <div class="flex flex-col h-full justify-center items-center space-y-8 relative">
+              <a href="index.html" class="text-2xl hover:text-gray-300 transition duration-300">Home</a>
+              <a href="index.html#about" class="text-2xl hover:text-gray-300 transition duration-300">About</a>
+              <a href="index.html#admins" class="text-2xl hover:text-gray-300 transition duration-300">Admins</a>
+              <a href="members.html" class="text-2xl hover:text-gray-300 transition duration-300">Members</a>
+              <a href="projects.html" class="text-2xl hover:text-gray-300 transition duration-300">Projects</a>
+              <a href="https://discord.gg/XardVF5p" class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300">Join Discord</a>
+              <button id="close-mobile-menu" class="absolute top-4 right-4 text-secondary focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+              </button>
+          </div>
       </div>
-    </nav>
-    <!-- navbar ends-->
+  </header>
 
-    <!-- hero section start -->
-    <div class="hero min-h-screen">
-      <div class="hero-content text-center">
-        <div class="">
-          <h1 class="text-4xl font-bold sm:text-5xl">
-            Join Our Professional Community
-          </h1>
-          <p class="py-6">Connect with programmers, gamers, and more!</p>
-          <a href="https://discord.gg/rxmBKWnQ">
-            <button class="btn btn-primary rounded-full px-10">Join Now</button>
-          </a>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Join Our Professional Community</h1>
+            <p class="text-xl mb-8">Connect with programmers, gamers, and more!</p>
+            <button class="bg-primary text-secondary text-lg font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition duration-300">
+                <a href="https://discord.gg/XardVF5p">Join Now</a>
+            </button>
         </div>
-      </div>
-    </div>
-    <!--hero section ends-->
+    </section>
 
-    <!-- about section start-->
-    <div class="hero min-h-10" id="about">
-      <div class="hero-content text-center mt-10">
-        <div class="max-w-md">
-          <h1 class="text-2xl font-bold">About Our Community</h1>
-          <p class="py-6">
-            Our community brings together professionals and enthusiasts to share
-            knowledge, collaborate on projects, and build lasting connections.
-            Whether you're a seasoned expert or just starting out, you'll find a
-            welcoming space to grow and learn.
-          </p>
-          <button class="button text-center mb-8">
-            <span class="button_lg">
-              <span class="button_sl"></span>
-              <span class="button_text"
-                ><a href="#">View Our Discord Members</a></span
-              >
-            </span>
-          </button>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">About Our Community</h2>
+            <p class="text-lg leading-relaxed max-w-2xl mx-auto text-center mb-8">
+                Our community brings together professionals and enthusiasts to share knowledge, collaborate on projects, and build lasting connections. Whether you're a seasoned expert or just starting out, you'll find a welcoming space to grow and learn.
+            </p>
+            <div class="text-center">
+                <button class="button text-center mb-8">
+                    <span class="button_lg">
+                      <span class="button_sl"></span>
+                      <span class="button_text"
+                        ><a href="members.html">View Our Discord Members</a></span
+                      >
+                    </span>
+                  </button>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- about section ends -->
+    </section>
 
-    <!-- divider -->
-    <div class="flex w-full flex-col">
-      <div class="divider divider-neutral"></div>
-    </div>
-
-    <!-- founders section start -->
-    <section id="admins" class="py-20">
-      <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold text-center mb-12">Meet Our Founders</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <!-- Admin Card 1 -->
-              <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
-                <img src="https://cdn.prod.website-files.com/62bdc93e9cccfb43e155104c/654f7e7c694b77bb4600eed3_Luffy%2520PFP%2520for%2520Tiktok%25205.png" alt="Zaid Rakhange" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
-                <h3 class="font-bold text-xl mb-2 z-10">Zaid Rakhange</h3>
-                <p class="text-sm text-gray-600 mb-4 z-10">Co-Founder</p>
-                <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
-                <div class="flex space-x-4 mb-4 z-10">
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/zaid-commits" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+    <section id="admins" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Meet Our Founders</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Admin Card 1 -->
+                <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                    <img src="https://cdn.prod.website-files.com/62bdc93e9cccfb43e155104c/654f7e7c694b77bb4600eed3_Luffy%2520PFP%2520for%2520Tiktok%25205.png" alt="Zaid Rakhange" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                    <h3 class="font-bold text-xl mb-2 z-10">Zaid Rakhange</h3>
+                    <p class="text-sm text-gray-600 mb-4 z-10">Co-Founder</p>
+                    <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
+                    <div class="flex space-x-4 mb-4 z-10">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/zaid-commits" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                    <img src="https://i.postimg.cc/K8xHFpfm/divyanshu.jpg" alt="Divyanshu Mhatre" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                    <h3 class="font-bold text-xl mb-2 z-10">Divyanshu Mhatre</h3>
+                    <p class="text-sm text-gray-600 mb-4 z-10">Founder</p>
+                    <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
+                    <div class="flex space-x-4 mb-4 z-10">
+                        <a href="https://x.com/Swechy315981?t=li8kYqLnvXlJz1HxlhpVXg&s=09" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Impic0" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                 <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                    <img src="https://i.postimg.cc/yNrQm1HN/arya.png" alt="Arya S" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                    <h3 class="font-bold text-xl mb-2 z-10">Arya S</h3>
+                    <p class="text-sm text-gray-600 mb-4 z-10">Discord Admin</p>
+                    <p class="text-sm text-center mb-4 z-10">Passionate to build a vibrant community, connect with new people.</p>
+                    <div class="flex space-x-4 mb-4 z-10">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
-              <!-- Admin Card 2 -->
-              <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
-                  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
-                  <img src="https://i.postimg.cc/K8xHFpfm/divyanshu.jpg" alt="Divyanshu Mhatre" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
-                  <h3 class="font-bold text-xl mb-2 z-10">Divyanshu Mhatre</h3>
-                  <p class="text-sm text-gray-600 mb-4 z-10">Founder</p>
-                  <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
-                  <div class="flex space-x-4 mb-4 z-10">
-                      <a href="https://x.com/Swechy315981?t=li8kYqLnvXlJz1HxlhpVXg&s=09" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
-                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
-                      <a href="https://github.com/Impic0" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
-                  </div>
-              </div>
-              <!-- Admin Card 3 -->
-               <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
-                  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
-                  <img src="https://i.postimg.cc/yNrQm1HN/arya.png" alt="Arya S" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
-                  <h3 class="font-bold text-xl mb-2 z-10">Arya S</h3>
-                  <p class="text-sm text-gray-600 mb-4 z-10">Discord Admin</p>
-                  <p class="text-sm text-center mb-4 z-10">Passionate to build a vibrant community, connect with new people.</p>
-                  <div class="flex space-x-4 mb-4 z-10">
-                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
-                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
-                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
-                  </div>
-              </div>
-          </div>
-          </div>
-      </div>
-  </section>
-  <!-- founders section ends -->
+            </div>
+        </div>
+    </section>
 
-  <!-- footer -->         
-<footer class="bg-black text-white ">
-  <div class="container px-6 py-8 mx-auto">
-      <div class="flex flex-col items-center text-center">
-          <a href="#">
-              <img class="w-auto h-16" src="./src/images/impic.png" alt="">
-          </a>
-
-          <h2 class="max-w-md mx-auto mt-4 text-gray-500 dark:text-gray-400 text-lg font-bold">Impic Discord Community</h2>
-          <span class="max-w-md mx-auto text-gray-500 dark:text-gray-400">Connect, Learn, and Grow Together</span>
-
-          
-      </div>
-
-      <hr class="my-10 border-gray-200 dark:border-gray-700" />
-
-      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
-          <p class="text-sm text-gray-500">© Copyright 2024. All Rights Reserved.</p>
-
-          <div class="flex mt-3 -mx-2 sm:mt-0">
-              
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  href="#" class="fill-current mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                </svg>
-              </a>
-              
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  href="#" class="fill-current mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
-                  >
-                  <path
-                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                </svg>
-              </a>
-
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  href="#" class="fill-current last:mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300">
-                  <path
-                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                </svg>
-              </a>
-          </div>
-      </div>
-  </div>
-</footer>
-
-      
-  <!-- custom js file -->
-    <script src="./src/script.js"></script>
-  </body>
+    <!-- Footer -->
+    <footer class="bg-primary text-secondary py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Impic Discord Community</h3>
+                    <p>Connect, Learn, and Grow Together</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm">
+                <p>&copy; 2024 Impic Discord Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+  
+      mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.remove('translate-x-full');
+      });
+  
+      closeMobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+      });
+  
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+              mobileMenu.classList.add('translate-x-full');
+          });
+      });
+  </script>
+</body>
 </html>

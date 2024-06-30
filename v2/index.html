@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Impic: Connect, Share, Inspire</title>
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- navbar starts -->
+    <nav class="sticky top-0 z-50">
+      <div class="navbar text-white bg-black">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow bg-black"
+            >
+            <li><a href="#about">About</a></li>
+            <li><a href="#admins">Admins</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            </ul>
+          </div>
+          <a class="text-xl pl-4 font-bold" href="#">Impic</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a href="#about">About</a></li>
+            <li><a href="#admins">Admins</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a
+            class="btn bg-black text-white hover:bg-white hover:text-black transition duration-500 ease-in-out mr-3" href="https://discord.gg/rxmBKWnQ"
+            >Join Discord</a
+          >
+        </div>
+        <button id="theme-toggle" class="btn btn-ghost text-lg">🌙</button>
+      </div>
+    </nav>
+    <!-- navbar ends-->
+
+    <!-- hero section start -->
+    <div class="hero min-h-screen">
+      <div class="hero-content text-center">
+        <div class="">
+          <h1 class="text-4xl font-bold sm:text-5xl">
+            Join Our Professional Community
+          </h1>
+          <p class="py-6">Connect with programmers, gamers, and more!</p>
+          <a href="https://discord.gg/rxmBKWnQ">
+            <button class="btn btn-primary rounded-full px-10">Join Now</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!--hero section ends-->
+
+    <!-- about section start-->
+    <div class="hero min-h-10" id="about">
+      <div class="hero-content text-center mt-10">
+        <div class="max-w-md">
+          <h1 class="text-2xl font-bold">About Our Community</h1>
+          <p class="py-6">
+            Our community brings together professionals and enthusiasts to share
+            knowledge, collaborate on projects, and build lasting connections.
+            Whether you're a seasoned expert or just starting out, you'll find a
+            welcoming space to grow and learn.
+          </p>
+          <button class="button text-center mb-8">
+            <span class="button_lg">
+              <span class="button_sl"></span>
+              <span class="button_text"
+                ><a href="#">View Our Discord Members</a></span
+              >
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- about section ends -->
+
+    <!-- divider -->
+    <div class="flex w-full flex-col">
+      <div class="divider divider-neutral"></div>
+    </div>
+
+    <!-- founders section start -->
+    <section id="admins" class="py-20">
+      <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-12">Meet Our Founders</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Admin Card 1 -->
+              <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                <img src="https://cdn.prod.website-files.com/62bdc93e9cccfb43e155104c/654f7e7c694b77bb4600eed3_Luffy%2520PFP%2520for%2520Tiktok%25205.png" alt="Zaid Rakhange" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                <h3 class="font-bold text-xl mb-2 z-10">Zaid Rakhange</h3>
+                <p class="text-sm text-gray-600 mb-4 z-10">Co-Founder</p>
+                <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
+                <div class="flex space-x-4 mb-4 z-10">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/zaid-commits" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+              <!-- Admin Card 2 -->
+              <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                  <img src="https://i.postimg.cc/K8xHFpfm/divyanshu.jpg" alt="Divyanshu Mhatre" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                  <h3 class="font-bold text-xl mb-2 z-10">Divyanshu Mhatre</h3>
+                  <p class="text-sm text-gray-600 mb-4 z-10">Founder</p>
+                  <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
+                  <div class="flex space-x-4 mb-4 z-10">
+                      <a href="https://x.com/Swechy315981?t=li8kYqLnvXlJz1HxlhpVXg&s=09" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                      <a href="https://github.com/Impic0" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                  </div>
+              </div>
+              <!-- Admin Card 3 -->
+               <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                  <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                  <img src="https://i.postimg.cc/yNrQm1HN/arya.png" alt="Arya S" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                  <h3 class="font-bold text-xl mb-2 z-10">Arya S</h3>
+                  <p class="text-sm text-gray-600 mb-4 z-10">Discord Admin</p>
+                  <p class="text-sm text-center mb-4 z-10">Passionate to build a vibrant community, connect with new people.</p>
+                  <div class="flex space-x-4 mb-4 z-10">
+                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                      <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
+  </section>
+  <!-- founders section ends -->
+
+  <!-- footer -->         
+<footer class="bg-black text-white ">
+  <div class="container px-6 py-8 mx-auto">
+      <div class="flex flex-col items-center text-center">
+          <a href="#">
+              <img class="w-auto h-16" src="./src/images/impic.png" alt="">
+          </a>
+
+          <h2 class="max-w-md mx-auto mt-4 text-gray-500 dark:text-gray-400 text-lg font-bold">Impic Discord Community</h2>
+          <span class="max-w-md mx-auto text-gray-500 dark:text-gray-400">Connect, Learn, and Grow Together</span>
+
+          
+      </div>
+
+      <hr class="my-10 border-gray-200 dark:border-gray-700" />
+
+      <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm text-gray-500">© Copyright 2024. All Rights Reserved.</p>
+
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+              
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  href="#" class="fill-current mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                </svg>
+              </a>
+              
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  href="#" class="fill-current mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300"
+                  >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                </svg>
+              </a>
+
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  href="#" class="fill-current last:mx-2 text-sm text-gray-500 transition-colors duration-300 hover:text-gray-500 dark:hover:text-gray-300">
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                </svg>
+              </a>
+          </div>
+      </div>
+  </div>
+</footer>
+
+      
+  <!-- custom js file -->
+    <script src="./src/script.js"></script>
+  </body>
+</html>
