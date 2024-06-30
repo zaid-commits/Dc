@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impic Discord Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    
+    <link rel="shortcut icon" href="Images/impic.png" type="image/x-icon">
+    <style>
+        /* button styles */
+        @keyframes slideAnimation {
+        0% {
+          width: 0;
+        }
+        50% {
+          width: calc(100% + 15px);
+        }
+        100% {
+          width: 0;
+        }
+      }
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #ff4655;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+        animation: slideAnimation 3s infinite;
+      }
+
+      .button:hover .button_sl {
+        animation: none;
+        width: calc(100% + 15px);
+      }
+      .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        background: none;
+        color: #0f1923;
+        cursor: pointer;
+        position: relative;
+        padding: 8px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.15s ease;
+      }
+
+      .button::before,
+      .button::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: calc(50% - 5px);
+        border: 1px solid #7d8082;
+        transition: all 0.15s ease;
+      }
+
+      .button::before {
+        top: 0;
+        border-bottom-width: 0;
+      }
+
+      .button::after {
+        bottom: 0;
+        border-top-width: 0;
+      }
+
+      .button:active,
+      .button:focus {
+        outline: none;
+      }
+
+      .button:active::before,
+      .button:active::after {
+        right: 3px;
+        left: 3px;
+      }
+
+      .button:active::before {
+        top: 3px;
+      }
+
+      .button:active::after {
+        bottom: 3px;
+      }
+
+      .button_lg {
+        position: relative;
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #0f1923;
+        overflow: hidden;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+      }
+
+      .button_lg::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        background-color: #0f1923;
+      }
+
+      .button_lg::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 4px;
+        height: 4px;
+        background-color: #0f1923;
+        transition: all 0.2s ease;
+      }
+
+      .button_sl {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: -1px;
+        left: -8px;
+        width: 0;
+        background-color: #7d8082;
+        transform: skew(-15deg);
+        transition: all 0.2s ease;
+      }
+
+      .button_text {
+        position: relative;
+      }
+
+      .button:hover {
+        color: #0f1923;
+      }
+
+      .button:hover .button_sl {
+        width: calc(100% + 15px);
+      }
+
+      .button:hover .button_lg::after {
+        background-color: #fff;
+      }
+
+        /* button ends here */
+         .admin-card {
+          border: 2px solid #000000;
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+
+        .admin-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .admin-card img {
+          border: 3px solid #000000;
+        }
+       .border-primary {
+    border-color: #3333ff; /* Change to your primary color */
+}
+
+.text-primary {
+    color: #3333ff; /* Change to your primary color */
+} 
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .admin-card:hover .absolute {
+    opacity: 0.1;
+}
+        /* .admin-card {
+            transition: all 0.3s ease;
+        }
+        .admin-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .admin-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .admin-card:hover::before {
+            opacity: 1;
+        } */
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        secondary: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-secondary text-primary">
+    <!-- Header -->
+    <header class="bg-primary text-secondary shadow-md fixed w-full z-50">
+      <nav class="container mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+              <div class="text-xl font-bold"><a href="index.html">Impic</a></div>
+              <div class="hidden md:flex space-x-6">
+                  <a href="index.html" class="hover:text-gray-300 transition duration-300">Home</a>
+                  <a href="index.html#about" class="hover:text-gray-300 transition duration-300">About</a>
+                  <a href="index.html#admins" class="hover:text-gray-300 transition duration-300">Admins</a>
+                  <a href="members.html" class="hover:text-gray-300 transition duration-300">Members</a>
+                  <a href="projects.html" class="hover:text-gray-300 transition duration-300">Projects</a>
+              </div>
+              <button class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300 hover-scale hidden md:block">
+                  <a href="https://discord.gg/XardVF5p">Join Discord</a>
+              </button>
+              <!-- Mobile menu button -->
+              <button id="mobile-menu-button" class="md:hidden text-secondary focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  </svg>
+              </button>
+          </div>
+      </nav>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden bg-primary text-secondary fixed inset-0 z-50 transform transition-transform duration-300 ease-in-out translate-x-full">
+          <div class="flex flex-col h-full justify-center items-center space-y-8 relative">
+              <a href="index.html" class="text-2xl hover:text-gray-300 transition duration-300">Home</a>
+              <a href="index.html#about" class="text-2xl hover:text-gray-300 transition duration-300">About</a>
+              <a href="index.html#admins" class="text-2xl hover:text-gray-300 transition duration-300">Admins</a>
+              <a href="members.html" class="text-2xl hover:text-gray-300 transition duration-300">Members</a>
+              <a href="projects.html" class="text-2xl hover:text-gray-300 transition duration-300">Projects</a>
+              <a href="https://discord.gg/XardVF5p" class="bg-secondary text-primary font-bold py-2 px-4 rounded hover:bg-gray-200 transition duration-300">Join Discord</a>
+              <button id="close-mobile-menu" class="absolute top-4 right-4 text-secondary focus:outline-none">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+              </button>
+          </div>
+      </div>
+  </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Join Our Professional Community</h1>
+            <p class="text-xl mb-8">Connect with programmers, gamers, and more!</p>
+            <button class="bg-primary text-secondary text-lg font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition duration-300">
+                <a href="https://discord.gg/XardVF5p">Join Now</a>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">About Our Community</h2>
+            <p class="text-lg leading-relaxed max-w-2xl mx-auto text-center mb-8">
+                Our community brings together professionals and enthusiasts to share knowledge, collaborate on projects, and build lasting connections. Whether you're a seasoned expert or just starting out, you'll find a welcoming space to grow and learn.
+            </p>
+            <div class="text-center">
+                <button class="button text-center mb-8">
+                    <span class="button_lg">
+                      <span class="button_sl"></span>
+                      <span class="button_text"
+                        ><a href="members.html">View Our Discord Members</a></span
+                      >
+                    </span>
+                  </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="admins" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Meet Our Founders</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Admin Card 1 -->
+                <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                    <img src="https://cdn.prod.website-files.com/62bdc93e9cccfb43e155104c/654f7e7c694b77bb4600eed3_Luffy%2520PFP%2520for%2520Tiktok%25205.png" alt="Zaid Rakhange" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                    <h3 class="font-bold text-xl mb-2 z-10">Zaid Rakhange</h3>
+                    <p class="text-sm text-gray-600 mb-4 z-10">Co-Founder</p>
+                    <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
+                    <div class="flex space-x-4 mb-4 z-10">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/zaid-commits" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                    <img src="https://i.postimg.cc/K8xHFpfm/divyanshu.jpg" alt="Divyanshu Mhatre" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                    <h3 class="font-bold text-xl mb-2 z-10">Divyanshu Mhatre</h3>
+                    <p class="text-sm text-gray-600 mb-4 z-10">Founder</p>
+                    <p class="text-sm text-center mb-4 z-10">Passionate about building communities and fostering collaboration.</p>
+                    <div class="flex space-x-4 mb-4 z-10">
+                        <a href="https://x.com/Swechy315981?t=li8kYqLnvXlJz1HxlhpVXg&s=09" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Impic0" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                 <div class="admin-card bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 relative transition-all duration-300 hover:shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 transition-opacity duration-300"></div>
+                    <img src="https://i.postimg.cc/yNrQm1HN/arya.png" alt="Arya S" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-primary z-10">
+                    <h3 class="font-bold text-xl mb-2 z-10">Arya S</h3>
+                    <p class="text-sm text-gray-600 mb-4 z-10">Discord Admin</p>
+                    <p class="text-sm text-center mb-4 z-10">Passionate to build a vibrant community, connect with new people.</p>
+                    <div class="flex space-x-4 mb-4 z-10">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-secondary py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-2">Impic Discord Community</h3>
+                    <p>Connect, Learn, and Grow Together</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-secondary hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm">
+                <p>&copy; 2024 Impic Discord Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+  
+      mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.remove('translate-x-full');
+      });
+  
+      closeMobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+      });
+  
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+              mobileMenu.classList.add('translate-x-full');
+          });
+      });
+  </script>
+</body>
+</html>
