@@ -3146,3 +3146,7 @@ pre {
     color: rgb(209 213 219 / var(--tw-text-opacity));
   }
 }
+
+body{
+  cursor: url(/cursor.svg),auto;
+}
